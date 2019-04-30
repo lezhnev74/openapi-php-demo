@@ -1,0 +1,53 @@
+openapi: 3.0.2
+info:
+  title: Password generation API
+  version: 1.0.0
+  contact:
+    name: Dmitry Lezhnev
+    url: /
+    email: lezhnev.work@gmail.com
+tags:
+  - name: Demo
+  - name: Password generation
+paths:
+  /generate:
+    get:
+      operationId: getPassword
+      tags:
+        - Password
+      parameters:
+        - in: query
+          name: length
+          description: How long the password should be
+          schema:
+            type: number
+            default: 20
+        - in: header
+          name: Accept
+          description: What media type to return
+          schema:
+            type: string
+            enum:
+              - text/plain
+              - application/json
+            default: application/json
+
+      description: Password generator
+
+      responses:
+
+        200:
+          description: |
+            It generates a random password
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  password:
+                    type: string
+                    example: abcde12345
+            text/plain:
+              schema:
+                type: string
+              example: abcde12345
