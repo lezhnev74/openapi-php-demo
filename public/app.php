@@ -15,13 +15,18 @@ $app->get('/generate', function (Request $request, Response $response, array $ar
 
     switch ($accept) {
         case "text/plain":
-            $response = $response->withHeader('Content-Type', 'text/plain');
+            $contentLength = strlen($password);
+            $response      = $response->withHeader('Content-Type', 'text/plain')
+                                      ->withHeader('Content-Length', $contentLength);
             $response->getBody()->write($password);
             break;
         case "application/json":
         default:
-            $response = $response->withHeader('Content-Type', 'application/json');
-            $response->getBody()->write(json_encode(['password' => $password]));
+            $content       = json_encode(['password' => $password]);
+            $contentLength = strlen($content);
+            $response      = $response->withHeader('Content-Type', 'application/json')
+                                      ->withHeader('Content-Length', $contentLength);
+            $response->getBody()->write($content);
 
     }
 

@@ -22,15 +22,6 @@ paths:
           schema:
             type: number
             default: 20
-        - in: header
-          name: Accept
-          description: What media type to return
-          schema:
-            type: string
-            enum:
-              - text/plain
-              - application/json
-            default: application/json
 
       description: Password generator
 

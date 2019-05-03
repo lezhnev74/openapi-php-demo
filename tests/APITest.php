@@ -15,7 +15,14 @@ class APITest extends \PHPUnit\Framework\TestCase
      */
     protected function getApp(): \Slim\App
     {
+        // We add a new validation here, which will automatically check the api against the schema
+        $middleware = new \OpenAPIValidation\PSR15\SlimAdapter(
+            \OpenAPIValidation\PSR15\ValidationMiddleware::fromYamlSpec(__DIR__.'/../openapi/spec.yaml')
+        );
+
+        /** @var \Slim\App $app */
         $app = include __DIR__ . "/../public/app.php";
+        $app->add($middleware);
         return $app;
     }
 
