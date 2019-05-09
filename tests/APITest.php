@@ -17,7 +17,7 @@ class APITest extends \PHPUnit\Framework\TestCase
     {
         // We add a new validation here, which will automatically check the api against the schema
         $middleware = new \OpenAPIValidation\PSR15\SlimAdapter(
-            \OpenAPIValidation\PSR15\ValidationMiddleware::fromYamlSpec(__DIR__.'/../openapi/spec.yaml')
+            \OpenAPIValidation\PSR15\ValidationMiddleware::fromYamlFile(__DIR__.'/../openapi/spec.yaml')
         );
 
         /** @var \Slim\App $app */
