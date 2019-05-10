@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a1478cc53b1b8e88bc8c89376f9480ba",
+    "content-hash": "b5d53f88b7bed56dcf47ad1dea6f19e2",
     "packages": [
         {
             "name": "cebe/php-openapi",
@@ -164,26 +164,29 @@
         },
         {
             "name": "lezhnev74/openapi-psr7-validator",
-            "version": "dev-master",
+            "version": "0.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lezhnev74/openapi-psr7-validator.git",
-                "reference": "427795eb2f459101c33f868f4fcbbc83a798c0fd"
+                "reference": "8031771d1d24b11a7352d5ed92d6673ea9cedfae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lezhnev74/openapi-psr7-validator/zipball/427795eb2f459101c33f868f4fcbbc83a798c0fd",
-                "reference": "427795eb2f459101c33f868f4fcbbc83a798c0fd",
+                "url": "https://api.github.com/repos/lezhnev74/openapi-psr7-validator/zipball/8031771d1d24b11a7352d5ed92d6673ea9cedfae",
+                "reference": "8031771d1d24b11a7352d5ed92d6673ea9cedfae",
                 "shasum": ""
             },
             "require": {
                 "cebe/php-openapi": "^1.0",
                 "ext-json": "*",
+                "psr/cache": "^1.0",
                 "psr/http-message": "^1.0",
                 "psr/http-server-middleware": "^1.0",
                 "respect/validation": "^1.1"
             },
             "require-dev": {
+                "cache/array-adapter": "^1.0",
+                "doctrine/coding-standard": "^6.0",
                 "guzzlehttp/psr7": "^1.5",
                 "phpunit/phpunit": "^7|^8"
             },
@@ -213,7 +216,7 @@
                 "psr7",
                 "validation"
             ],
-            "time": "2019-05-09T11:17:54+00:00"
+            "time": "2019-05-10T16:55:53+00:00"
         },
         {
             "name": "nikic/fast-route",
@@ -310,6 +313,52 @@
                 "dependency injection"
             ],
             "time": "2018-01-21T07:42:36+00:00"
+        },
+        {
+            "name": "psr/cache",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/cache.git",
+                "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/cache/zipball/d11b50ad223250cf17b86e38383413f5a6764bf8",
+                "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Cache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for caching libraries",
+            "keywords": [
+                "cache",
+                "psr",
+                "psr-6"
+            ],
+            "time": "2016-08-06T20:24:11+00:00"
         },
         {
             "name": "psr/container",
@@ -2409,9 +2458,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "lezhnev74/openapi-psr7-validator": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
